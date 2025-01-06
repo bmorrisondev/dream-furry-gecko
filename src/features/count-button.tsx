@@ -1,11 +1,19 @@
-import { useReducer } from "react"
+import { useEffect, useReducer } from "react"
 
 export const CountButton = () => {
   const [count, increase] = useReducer((c) => c + 1, 0)
 
+
+  function clickHandler(event: React.MouseEvent<HTMLButtonElement>) {
+    event.stopPropagation();
+    event.preventDefault();
+    console.log("click")
+    increase()
+  }
+
   return (
     <button
-      onClick={() => increase()}
+      onClick={clickHandler}
       type="button"
       className="plasmo-flex plasmo-flex-row plasmo-items-center plasmo-px-4 plasmo-py-2 plasmo-text-sm plasmo-rounded-lg plasmo-transition-all plasmo-border-none
       plasmo-shadow-lg hover:plasmo-shadow-md
