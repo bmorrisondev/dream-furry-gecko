@@ -14,6 +14,7 @@
     "plasmo": "0.89.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-router-dom": "^7.1.1",
     "tailwindcss": "3.4.1"
   },
   "devDependencies": {
@@ -31,7 +32,8 @@
     "host_permissions": [
       "https://*/*",
       "http://localhost/*",
-      "https://$CLERK_FRONTEND_API/*"
+      "https://$CLERK_FRONTEND_API/*",
+      "$PLASMO_PUBLIC_CLERK_SYNC_HOST/*"
     ],
     "permissions": [
       "storage",
